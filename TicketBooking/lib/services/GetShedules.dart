@@ -36,6 +36,7 @@ class GetShedules {
             atime: shedule['atime'],
             from: shedule['from'],
             to: shedule['to'],
+            plane: shedule['plane'],
           ),
         ); // adding shedules list
 

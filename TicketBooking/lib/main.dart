@@ -1,3 +1,4 @@
+import 'package:TicketBooking/showShedule.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'bookFlight.dart';
@@ -8,6 +9,7 @@ void main() {
     routes: {
       '/': (context) => LoginPage(),
       '/booking': (context) => BookFlight(),
+      '/shedules': (context) => ShowShedules(),
     },
   ));
 }
