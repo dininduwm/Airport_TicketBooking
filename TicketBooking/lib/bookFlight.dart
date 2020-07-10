@@ -25,8 +25,9 @@ class _BookFlightState extends State<BookFlight> {
         onPressed: () async {
           if (fromAirportIndex != null && toAirportIndex != null) {
             // if a passWord and a passport number has enterd
-            bool res = await GetShedules.getShedules(GetAirports.airportID[fromAirportIndex], 
-                          GetAirports.airportID[toAirportIndex]);
+            bool res = await GetShedules.getShedules(
+                GetAirports.airportID[fromAirportIndex],
+                GetAirports.airportID[toAirportIndex]);
             if (res) {
               print("logged In");
               Toast.show(
@@ -83,20 +84,20 @@ class _BookFlightState extends State<BookFlight> {
                           width: 50.0,
                         ),
                         Container(
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton<int>(
-                                  hint: Text('Select From Airport'),
-                                  value: fromAirportIndex,
-                                  items: airports,
-                                  onChanged: (value) {
-                                    print(value);
-                                    setState(() {
-                                      fromAirportIndex = value;
-                                    });
-                                  },
-                                ),
-                              ),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<int>(
+                              hint: Text('Select From Airport'),
+                              value: fromAirportIndex,
+                              items: airports,
+                              onChanged: (value) {
+                                print(value);
+                                setState(() {
+                                  fromAirportIndex = value;
+                                });
+                              },
                             ),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -116,20 +117,20 @@ class _BookFlightState extends State<BookFlight> {
                           width: 50.0,
                         ),
                         Container(
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton<int>(
-                                  hint: Text('Select To Airport'),
-                                  value: toAirportIndex,
-                                  items: airports,
-                                  onChanged: (value) {
-                                    print(value);
-                                    setState(() {
-                                      toAirportIndex = value;
-                                    });
-                                  },
-                                ),
-                              ),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<int>(
+                              hint: Text('Select To Airport'),
+                              value: toAirportIndex,
+                              items: airports,
+                              onChanged: (value) {
+                                print(value);
+                                setState(() {
+                                  toAirportIndex = value;
+                                });
+                              },
                             ),
+                          ),
+                        ),
                       ],
                     ),
                   ],

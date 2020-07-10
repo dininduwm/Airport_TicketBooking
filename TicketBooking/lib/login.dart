@@ -1,3 +1,4 @@
+import 'package:TicketBooking/services/GetBooked.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 import 'services/GetLogin.dart';
@@ -22,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             // if a passWord and a passport number has enterd
             bool res = await GetLogin.login(
                 passportNumberController.text, passwordController.text);
+            GetBooked.passport = passportNumberController.text; //set the passport number in the field
             if (res) {
               print("logged In");
               Toast.show(

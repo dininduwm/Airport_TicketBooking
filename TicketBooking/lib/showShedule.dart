@@ -1,4 +1,5 @@
 import 'package:TicketBooking/datatypes/Shedule.dart';
+import 'package:TicketBooking/services/GetBooked.dart';
 import 'package:TicketBooking/services/GetShedules.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class ShowShedules extends StatefulWidget {
 
 class _ShowShedulesState extends State<ShowShedules> {
   List<Shedule> shedules =
-      GetShedules.shedules; // take the loaded shedules from the list
+      GetShedules.shedules; // take the loaded shedules from the list 
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,10 @@ class _ShowShedulesState extends State<ShowShedules> {
                       ),
                     ),
                     FlatButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        GetBooked.shedule = shedules[index].record;
+                        Navigator.popAndPushNamed(this.context, '/enterSeat');
+                      },
                       icon: Icon(
                         Icons.book,
                       ),

@@ -1,3 +1,4 @@
+import 'package:TicketBooking/enterSeat.dart';
 import 'package:TicketBooking/showShedule.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
@@ -10,6 +11,7 @@ void main() {
       '/': (context) => LoginPage(),
       '/booking': (context) => BookFlight(),
       '/shedules': (context) => ShowShedules(),
+      '/enterSeat': (context) => EnterSeat(),
     },
   ));
 }
